@@ -11,8 +11,12 @@ def submit():
 	v = round(v, 3)
 
 	output.config(state = "normal")
-	output.insert(tk.INSERT, v)
-	ooutput.config(state = "disabled")
+
+	outputValue = "Given\nradius:"+str(r)+" units\nheight:"+str(h)+" units\nThe volume is:"+str(v)+" units cubed\n\n"
+
+	output.delete(1.0, tk.END)
+	output.insert(tk.INSERT, outputValue)
+	output.config(state = "disabled")
 
 
 root = tk.Tk()
