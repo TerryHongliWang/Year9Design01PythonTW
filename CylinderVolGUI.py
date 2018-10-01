@@ -14,6 +14,11 @@ def submit():
 
 	outputValue = "Given\nradius:"+str(r)+" units\nheight:"+str(h)+" units\nThe volume is:"+str(v)+" units cubed\n\n"
 
+	openData = open("CylinderData.txt", "a")
+	openData.write("The volume for radius", r, "and height", h, "is the volume of", v)
+	openData.close()
+
+
 	output.delete(1.0, tk.END)
 	output.insert(tk.INSERT, outputValue)
 	output.config(state = "disabled")
